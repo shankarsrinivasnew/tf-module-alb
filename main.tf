@@ -1,4 +1,4 @@
-resource "aws_lb" "test" {
+resource "aws_lb" "albr" {
   name               = "${var.env}-${var.name}-alb"
   internal           = var.internal
   load_balancer_type = var.load_balancer_type
