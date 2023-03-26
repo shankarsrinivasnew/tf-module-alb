@@ -22,7 +22,7 @@ resource "aws_security_group" "sgr" {
     from_port        = 80
     to_port          = 80
     protocol         = "tcp"
-    cidr_blocks      = var.allow_app_to
+    cidr_blocks      = var.allow_cidr
   }
 
   egress {
