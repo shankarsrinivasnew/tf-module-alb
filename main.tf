@@ -39,3 +39,19 @@ resource "aws_security_group" "sgr" {
       { Name = "${var.name}-${var.env}" }
     )
 }
+
+resource "aws_lb_listener" "listenerr" {
+  load_balancer_arn = aws_lb.albr
+  port              = "80"
+  protocol          = "HTTP"
+
+  default_action {
+    type = "fixed-response"
+
+    fixed_response {
+      content_type = "text/html"
+      message_body = "<h1>503 - Invalid Request.Use r53 dns name </h1>"
+      status_code  = "503"
+    }
+  }
+}
