@@ -41,7 +41,7 @@ resource "aws_security_group" "sgr" {
 }
 
 resource "aws_lb_listener" "listenerr" {
-  load_balancer_arn = aws_lb.albr
+  load_balancer_arn = aws_lb.albr.arn
   port              = "80"
   protocol          = "HTTP"
 
