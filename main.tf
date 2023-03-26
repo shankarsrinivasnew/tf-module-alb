@@ -55,3 +55,20 @@ resource "aws_lb_listener" "listenerr" {
     }
   }
 }
+
+/* 
+resource "aws_lb_listener_rule" "rule1" {
+  listener_arn = aws_lb_listener.
+  priority     = 99
+
+  action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.static.arn
+  }
+
+  condition {
+    host_header {
+      values = ["my-service.*.terraform.io"]
+    }
+  }
+} */
