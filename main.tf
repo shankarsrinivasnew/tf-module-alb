@@ -19,7 +19,7 @@ resource "aws_security_group" "sgr" {
   vpc_id      = var.vpc_id
 
   ingress {
-    description      = "for external traffic"
+    description      = "for traffic hitting on lb port"
     from_port        = 80
     to_port          = 80
     protocol         = "tcp"
